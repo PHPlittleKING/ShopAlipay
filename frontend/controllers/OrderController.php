@@ -115,7 +115,7 @@ class OrderController extends \yii\web\Controller
         // 下单
         $result = (new OrderInfo)->createOrder(array_merge($orderInfo,$address,$cart,$pay));
         // 清除购物车
-//        Cart::clearAll();
+        Cart::clearAll();
         // 响应
         $result->send();
     }
