@@ -7,6 +7,7 @@ use frontend\components\AlipaySubmit;
 use frontend\models\Cart;
 use frontend\models\Payment;
 use frontend\models\Region;
+use frontend\models\User;
 use frontend\models\UserAddress;
 use yii;
 use common\models\Category;
@@ -115,7 +116,7 @@ class OrderController extends \yii\web\Controller
         // 下单
         $result = (new OrderInfo)->createOrder(array_merge($orderInfo,$address,$cart,$pay));
         // 清除购物车
-        Cart::clearAll();
+//        Cart::clearAll();
         // 响应
         $result->send();
     }
@@ -163,12 +164,6 @@ class OrderController extends \yii\web\Controller
     public $alipayConfig;
     public function actionAlipayUrl()
     {
-        $data = OrderGoods::find()
-            ->select('goods_name')
-            ->asArray()
-            ->all();
-//        var_dump($name);
-//        var_dump($data);die;
         $this->alipayConfig = Yii::$app->params['alipay'];
         //支付类型
         $payment_type = "1";
@@ -178,11 +173,11 @@ class OrderController extends \yii\web\Controller
         //需http://格式的完整路径，不能加?id=123这类自定义参数
 
         //页面跳转同步通知页面路径
-        $return_url = "http://dev.front.com/";
+        $return_url = "http://dev.front.com/order/myorder";
         //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
         //商户订单号
-        $out_trade_no = '201710261013';
+        $out_trade_no = '201710261099';
         //商户网站订单系统中唯一订单号，必填
 
         //订单名称
@@ -234,5 +229,11 @@ class OrderController extends \yii\web\Controller
         $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
         return $html_text;
 
+    }
+
+    public function actionMyorder()
+    {
+        $this->layout = 'main';
+        return $this->render('myorder');
     }
 }

@@ -19,29 +19,29 @@ $this->params['cart'] = $cart;
     <title>MediaCenter - Responsive eCommerce Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
     <!-- Customizable CSS [green/orange/blue/navy/dark-green] -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- <link rel="stylesheet" href="assets/css/green.css"> -->
-    <link rel="stylesheet" href="assets/css/dark-green.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- <link rel="stylesheet" href="/assets/css/green.css"> -->
+    <link rel="stylesheet" href="/assets/css/dark-green.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/css/owl.transitions.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
 
     <!-- Fonts -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'> -->
 
     <!-- Icons/Glyphs -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
     <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="/assets/js/html5shiv.js"></script>
+    <script src="/assets/js/respond.min.js"></script>
     <![endif]-->
 
 
@@ -90,7 +90,7 @@ $this->params['cart'] = $cart;
                         <!-- 已登录 -->
                         <li>您好 , 欢迎您回来 <?=Yii::$app->user->identity->username;?> </li>
                         <li><a href="<?=\yii\helpers\Url::to(['site/logout']);?>">安全退出</a></li>
-                        <li><a href="authentication.html">我的订单</a></li>
+                        <li><a href="<?= \yii\helpers\Url::toRoute('order/myorder')?>">我的订单</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle"  data-toggle="dropdown" href="#change-language">个人中心</a>
                             <ul class="dropdown-menu" role="menu" >
@@ -112,8 +112,8 @@ $this->params['cart'] = $cart;
                 <!-- ============================================================= LOGO ============================================================= -->
                 <div class="logo">
                     <a href="index.html">
-                        <!--<img alt="logo" src="assets/images/logo.svg" width="233" height="54"/>-->
-                        <!--<object id="sp" type="image/svg+xml" data="assets/images/logo.svg" width="233" height="54"></object>-->
+                        <!--<img alt="logo" src="/assets/images/logo.svg" width="233" height="54"/>-->
+                        <!--<object id="sp" type="image/svg+xml" data="/assets/images/logo.svg" width="233" height="54"></object>-->
                         <svg width="233px" height="54px" viewBox="0 0 233 54" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <path fill="#ffffff" d=" M 0.00 0.00 L 233.00 0.00 L 233.00 54.00 L 0.00 54.00 L 0.00 0.00 Z" />
                             <path class="logo-svg" d=" M 104.82 6.46 C 107.74 5.13 110.66 3.80 113.58 2.46 C 113.59 18.71 113.59 34.95 113.59 51.20 C 110.65 51.20 107.71 51.20 104.78 51.20 C 104.84 50.67 104.96 49.62 105.02 49.09 C 100.02 53.56 91.66 52.69 87.37 47.67 C 84.80 44.83 83.96 40.97 83.20 37.33 C 75.63 37.37 68.05 37.26 60.47 37.40 C 61.41 39.88 62.49 42.75 65.24 43.71 C 69.03 45.31 73.10 43.58 75.89 40.91 C 77.67 42.73 79.47 44.54 81.22 46.40 C 75.60 52.47 65.66 53.95 58.77 49.23 C 53.06 45.18 51.58 37.52 52.30 30.95 C 52.75 25.29 55.84 19.51 61.29 17.27 C 66.83 15.00 73.85 15.40 78.54 19.37 C 81.58 21.92 82.87 25.85 83.50 29.64 C 84.32 24.24 87.32 18.69 92.71 16.75 C 96.83 15.07 101.64 15.89 104.93 18.89 C 104.77 14.75 104.83 10.60 104.82 6.46 Z" />
@@ -186,7 +186,7 @@ $this->params['cart'] = $cart;
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <div class="basket-item-count">
                                     <span class="count"><?=count($this->params['cart']['goodsList'])?></span>
-                                    <img src="assets/images/icon-cart.png" alt="" />
+                                    <img src="/assets/images/icon-cart.png" alt="" />
                                 </div>
 
                                 <div class="total-price-basket">
@@ -232,7 +232,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-01.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-01.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -249,7 +249,7 @@ $this->params['cart'] = $cart;
                                         </div>
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-02.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-02.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -267,7 +267,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-03.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-03.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -295,7 +295,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-04.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-04.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -313,7 +313,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-05.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-05.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -331,7 +331,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-06.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-06.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -359,7 +359,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-07.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-07.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -377,7 +377,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-08.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-08.jpg" />
                                             </a>
                                         </div>
                                     </div>
@@ -395,7 +395,7 @@ $this->params['cart'] = $cart;
 
                                         <div class="col-xs-12 col-sm-3 no-margin">
                                             <a href="#" class="thumb-holder">
-                                                <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-small-09.jpg" />
+                                                <img alt="" src="/assets/images/blank.gif" data-echo="/assets/images/products/product-small-09.jpg" />
                                             </a>
                                         </div>
 
@@ -535,10 +535,10 @@ $this->params['cart'] = $cart;
                 <div class="col-xs-12 col-sm-6 no-margin">
                     <div class="payment-methods ">
                         <ul>
-                            <li><img alt="" src="assets/images/payments/payment-visa.png"></li>
-                            <li><img alt="" src="assets/images/payments/payment-master.png"></li>
-                            <li><img alt="" src="assets/images/payments/payment-paypal.png"></li>
-                            <li><img alt="" src="assets/images/payments/payment-skrill.png"></li>
+                            <li><img alt="" src="/assets/images/payments/payment-visa.png"></li>
+                            <li><img alt="" src="/assets/images/payments/payment-master.png"></li>
+                            <li><img alt="" src="/assets/images/payments/payment-paypal.png"></li>
+                            <li><img alt="" src="/assets/images/payments/payment-skrill.png"></li>
                         </ul>
                     </div><!-- /.payment-methods -->
                 </div>
@@ -549,25 +549,25 @@ $this->params['cart'] = $cart;
     <!-- ============================================================= FOOTER : END ============================================================= -->   </div><!-- /.wrapper -->
 
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery-1.10.2.min.js"></script>
-<script src="assets/js/jquery-migrate-1.2.1.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-1.10.2.min.js"></script>
+<script src="/assets/js/jquery-migrate-1.2.1.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 <!-- <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script> -->
-<script src="assets/js/gmap3.min.js"></script>
-<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/css_browser_selector.min.js"></script>
-<script src="assets/js/echo.min.js"></script>
-<script src="assets/js/jquery.easing-1.3.min.js"></script>
-<script src="assets/js/bootstrap-slider.min.js"></script>
-<script src="assets/js/jquery.raty.min.js"></script>
-<script src="assets/js/jquery.prettyPhoto.min.js"></script>
-<script src="assets/js/jquery.customSelect.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/scripts.js"></script>
+<script src="/assets/js/gmap3.min.js"></script>
+<script src="/assets/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/css_browser_selector.min.js"></script>
+<script src="/assets/js/echo.min.js"></script>
+<script src="/assets/js/jquery.easing-1.3.min.js"></script>
+<script src="/assets/js/bootstrap-slider.min.js"></script>
+<script src="/assets/js/jquery.raty.min.js"></script>
+<script src="/assets/js/jquery.prettyPhoto.min.js"></script>
+<script src="/assets/js/jquery.customSelect.min.js"></script>
+<script src="/assets/js/wow.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
 
-<script src="assets/layer/layer.js"></script>
-<script src="assets/js/common.js?r=1"></script>
+<script src="/assets/layer/layer.js"></script>
+<script src="/assets/js/common.js?r=1"></script>
 
 <!-- <script src="http://w.sharethis.com/button/buttons.js"></script> -->
 <?php $this->endBody() ?>
