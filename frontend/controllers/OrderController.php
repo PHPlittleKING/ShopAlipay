@@ -173,11 +173,11 @@ class OrderController extends \yii\web\Controller
         //需http://格式的完整路径，不能加?id=123这类自定义参数
 
         //页面跳转同步通知页面路径
-        $return_url = "http://dev.front.com/order/myorder";
+        $return_url = "http://dev.front.com/user/myorder";
         //需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 
         //商户订单号
-        $out_trade_no = '201710261099';
+        $out_trade_no = '201810261099';
         //商户网站订单系统中唯一订单号，必填
 
         //订单名称
@@ -234,6 +234,7 @@ class OrderController extends \yii\web\Controller
     public function actionMyorder()
     {
         $this->layout = 'main';
+        $order = OrderInfo::getMyOrder($this->userId);
         return $this->render('myorder');
     }
 }

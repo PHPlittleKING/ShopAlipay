@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: CrazyT
- * Date: 2017/9/12
- * Time: 17:21
- */
-
 namespace backend\controllers;
 
 use Yii;

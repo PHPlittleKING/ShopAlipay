@@ -31,10 +31,10 @@ class OrderGoods extends \yii\db\ActiveRecord
     {
         return [
             [['order_id'], 'required'],
-            [['product_id', 'buy_number', 'order_id'], 'integer'],
+            [['product_id', 'buy_number', 'order_id','goods_id'], 'integer'],
             [['goods_price'], 'number'],
             [['goods_name'], 'string', 'max' => 120],
-//            [['attr_list'], 'string', 'max' => 255],
+//            [['attr_list'], 'string', 'max' => 45],
             [['goods_sn'], 'string', 'max' => 30],
             [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => OrderInfo::className(), 'targetAttribute' => ['order_id' => 'order_id']],
         ];
@@ -63,6 +63,13 @@ class OrderGoods extends \yii\db\ActiveRecord
         return $this->hasOne(OrderInfo::className(), ['order_id' => 'order_id']);
     }
     /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoods()
+    {
+        return $this->hasOne(Goods::className(), ['goods_id' => 'goods_id']);
+    }
+    /**
      * 添加订单商品
      *
      * @param $goodsList
@@ -75,10 +82,8 @@ class OrderGoods extends \yii\db\ActiveRecord
         {
             foreach ($goodsList as $goods)
             {
-
                 $goods['order_id'] = $orderId;
                 $_this = new self();
-//                var_dump($_this->validate());die;
                 if($_this->load(['OrderGoods'=>$goods]) && $_this->validate())
                 {
                     if(!$_this->save())

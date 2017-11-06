@@ -3,6 +3,14 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'language'=>'zh-CN',
     'components' => [
+        'elasticsearch' => [
+            'class' => 'yii\elasticsearch\Connection',
+            'nodes' => [
+                ['http_address' => '127.0.0.1:9200']
+            ],
+            'autodetectCluster' => false
+        ],
+
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

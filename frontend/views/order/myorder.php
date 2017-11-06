@@ -208,47 +208,7 @@
 
 
 <script>
-    // tooltip 展示联系人地址
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
 
-    });
-
-    // 查询物流
-    function shipping()
-    {
-        // 物流弹窗
-        layer.open({
-            title:'物流信息',
-            type: 1,
-            skin: 'demo-class', //样式类名
-            closeBtn: 0, //不显示关闭按钮
-            anim: 2,
-            shadeClose: true, //开启遮罩关闭
-            content: '<ul class="text-left" style="padding:10px;"><b>中通快递：458157653582</b>'
-            +'<li>快件已从 深圳中心 发出2017-10-14 02:32:35</li>'
-            +'<li>快件到达 深圳中心2017-10-14 02:30:14</li>'
-            +'<li>快件到达 深圳中心2017-10-14 02:30:14</li>'
-            +'<li>快件到达 深圳中心2017-10-14 02:30:14</li>'
-            +'<li>快件到达 深圳中心2017-10-14 02:30:14</li></ul>'
-        });
-    }
-
-    // 确认收货提示层
-    function confirmRece()
-    {
-
-        layer.confirm('您是确定要这么做吗？', {
-            btn: ['确定','再想想'] //按钮
-        }, function(){
-            layer.msg('操作成功.', {icon: 1});
-        }, function(){
-            layer.msg('哈哈，小贼再给你一次机会', {
-                time: 20000, //20s后自动关闭
-                btn: ['明白了', '知道了']
-            });
-        });
-    }
 </script>
 </body>
 </html>

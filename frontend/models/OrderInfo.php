@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use yii\data\Pagination;
 use Yii;
 
 /**
@@ -49,6 +50,22 @@ class OrderInfo extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    public $goods;
+
+    const ORDER_UNCONFIRM = 0;
+    const ORDER_CONFIRM = 1;
+    const ORDER_FINISH = 2;
+    const ORDER_CANCEL = 3;
+    const ORDER_BRACE = 4;
+    const ORDER_RETURN = 5;
+    const PAY_SUCCESS = 1;
+    const PAY_ERROR = 0;
+    const SHIP_UNSHIP = 0;
+    const SHIP_SHIPED = 1;
+    const SHIP_SINGNED = 2;
+
+
     public static function tableName()
     {
         return '{{%order_info}}';
@@ -168,5 +185,19 @@ class OrderInfo extends \yii\db\ActiveRecord
             $goodsList[$k]['sum']=$v['goods_price']*$v['buy_number'];
         }
 
+    }
+
+    static function getOrderList()
+    {
+        $query = self::find();
+        $page = new Pagination(['totalCount'=>$query->count(),'defaultPageSize'=>Yii::$app->params['pageSize']]);
+
+        $orderList = $query->select('order_id,order_sn,order_status,pay_status,consignee,shipping_status,pay_name,order_amount,create_time')
+            ->asArray()
+            ->orderBy('order_id DESC')
+            ->offset($page->offset)
+            ->limit($page->limit)
+            ->all();
+        return ['page'=>$page,'orderList'=>$orderList];
     }
 }

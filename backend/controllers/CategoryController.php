@@ -68,7 +68,7 @@ class CategoryController extends IndexController
 
     public function actionIndex()
     {
-        $categories = Category::level(Category::find()->asArray()->all());
+        $categories = Category::getLevelCategories(Category::find()->asArray()->all());
         return $this->render('index',['categories'=>$categories]);
     }
 
@@ -98,7 +98,7 @@ class CategoryController extends IndexController
             }
         }
         // 下拉菜单
-        $categories = Category::level(Category::find()->asArray()->all(),$id);
+        $categories = Category::getLevelCategories(Category::find()->asArray()->all(),$id);
         $dropDownList = $category->dropDownList($categories);
 
         return $this->render('update',['category'=>$category,'dropDownList'=>$dropDownList]);

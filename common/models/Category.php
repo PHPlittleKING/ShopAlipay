@@ -57,7 +57,8 @@ class Category extends \yii\db\ActiveRecord
         ];
     }
     //递归
-    static function actionGetData($data,$parent_id=0,$level=1,$exception=''){
+    static function actionGetData($data,$parent_id=0,$level=1,$exception='')
+    {
        // var_dump($exception);die;
         static  $catList=[];
         foreach ($data as $key => $value) {
@@ -66,8 +67,11 @@ class Category extends \yii\db\ActiveRecord
                 $catList[]=$value;
                 self::actionGetData($data,$value['cat_id'],$level+1,$exception);
             }
+
         }
+//        var_dump($catList);die;
         return $catList;
+
 
     }
 

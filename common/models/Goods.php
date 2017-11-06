@@ -8,6 +8,7 @@ use Yii;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use yii\elasticsearch\ActiveRecord;
 
 /**
  * This is the model class for table "{{%goods}}".
@@ -410,5 +411,10 @@ class Goods extends \yii\db\ActiveRecord
             }
         }
         return [];
+    }
+
+    public function attributes()
+    {
+        return ['id', 'name', 'sex', 'age', 'create_time'];
     }
 }
